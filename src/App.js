@@ -169,7 +169,7 @@ function TimeDisplay(probs){
     <TimeDisplay time = {today}></TimeDisplay>
     <div className = 'total'>
       <ButtonGroup path = {img_path} today = {today} onChangeMode = {()=> {
-      setStatus(false);
+      // setStatus(false);
     }}></ButtonGroup>
     </div>
     <br/>
