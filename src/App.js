@@ -60,7 +60,7 @@ function check_open(key, today){
   }
 }
 
-function Button_group(props){
+function ButtonGroup(props){
   
   const rst = [];
   for(let i = 0; i < props.path.length; i++){
@@ -96,7 +96,7 @@ function Button_group(props){
       orient_area[0].appendChild(status_img_div); // append div to the point of button 0
     }
   }>
-      <img id = 'img_group' className = 'img_group' src = {props.path[i].path}></img>
+      <img id = 'img_group' className = 'img_group' src = {props.path[i].path} alt = 'img group:button'></img>
       <div className = "button_group_name">{props.path[i].name}</div>
     </button>)
   }
@@ -104,7 +104,7 @@ function Button_group(props){
 }
 
 
-function Time_display(probs){
+function TimeDisplay(probs){
   let year = probs.time.getFullYear(); // 년도
   let month = probs.time.getMonth() + 1;  // 월
   let date = probs.time.getDate();  // 날짜
@@ -159,18 +159,18 @@ function Time_display(probs){
     ]
 
 
-    const [status, setStatus] = useState(null);
+    // const [status, setStatus] = useState(null);
 
   return (
     <>
     <div id = 'body'>
-    <img  className = 'title_img' src  = 'img/SJSU.png'></img>
+    <img  className = 'title_img' src  = 'img/SJSU.png' alt = 'sjsu title img'></img>
     <h1 className = 'header'>SJSU Facility OPEN/CLOSED</h1>
-    <Time_display time = {today}></Time_display>
+    <TimeDisplay time = {today}></TimeDisplay>
     <div className = 'total'>
-      <Button_group path = {img_path} today = {today} onChangeMode = {()=> {
+      <ButtonGroup path = {img_path} today = {today} onChangeMode = {()=> {
       setStatus(false);
-    }}></Button_group>
+    }}></ButtonGroup>
     </div>
     <br/>
     {/* <OPENCLOSED_CARD img = 'img/closed.png'></OPENCLOSED_CARD> */}
