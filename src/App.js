@@ -167,6 +167,10 @@ function TimeDisplay(probs){
     <img  className = 'title_img' src  = 'img/SJSU.png' alt = 'sjsu title img'></img>
     <h1 className = 'header'>SJSU Facility OPEN/CLOSED</h1>
     <TimeDisplay time = {today}></TimeDisplay>
+    <button id = 'refresh' onClick={() => {
+      window.location.reload();
+    }
+      }>Reload</button>
     <div className = 'total'>
       <ButtonGroup path = {img_path} today = {today} onChangeMode = {()=> {
       // setStatus(false);

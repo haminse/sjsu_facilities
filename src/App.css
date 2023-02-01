@@ -167,6 +167,16 @@
   transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
  }
 
+
+#refresh{
+  margin-bottom: 1.5%;
+  margin-left: 1%;
+  border-radius: 7px;
+  border: transparent;
+  padding: 10px;
+  background-color: #E5A823;
+}
+
  #footer{
   text-align: center;
   padding-top: 2%;
