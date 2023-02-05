@@ -1,9 +1,7 @@
 import './App.css';
 // import {useState} from 'react';
 // 0 : SUN , 1 : MON ... 6 : Sat
-function check_open(key, today){
-  console.log("key",key);
-  const open_close = [
+const open_close = [
   {key : 1, //Lib
   open_day: [0,1,2,3,4,5,6], 
   open_hour : [
@@ -27,13 +25,15 @@ function check_open(key, today){
     {day : 6, hour : [9,18]},]
 },
   {key : 3, //food
-  open_day: [1,2,3,4,5],
+  open_day: [0,1,2,3,4,5,6],
   open_hour: [
+    {day : 0, hour : [0,0]},
     {day : 1, hour : [10,17]},
     {day : 2, hour : [10,17]},
     {day : 3, hour : [10,17]},
     {day : 4, hour : [10,17]},
-    {day : 5, hour : [10,17]},]
+    {day : 5, hour : [10,17]},
+  {day : 6, hour : [0,0]}]
   },
   {key : 4, //union
   open_day: [0,1,2,3,4,5,6],
@@ -47,11 +47,15 @@ function check_open(key, today){
     {day : 6, hour : [8,20]},]
   }
 ]; // 1 book, 2 gym, 3 food, 4 union
+
+function check_open(key, today, open_close_array){
+  let open_close = open_close_array;
+  // console.log("key",key);
   let info = open_close[key]; // info has openday, openhour
   let today_day = today.getDay(); // 0~6
   let today_hour = today.getHours(); // 0~23
-  console.log(today_hour);
-  console.log(info);
+  // console.log(today_hour);
+  // console.log(info);
   //compare openday -> hour
   if(info.open_day.includes(today_day)){
     return (info.open_hour[today_day].hour[0] <= today_hour && info.open_hour[today_day].hour[1] > today_hour) //check the open_hour in today's day
@@ -65,9 +69,9 @@ function ButtonGroup(props){
   const rst = [];
   for(let i = 0; i < props.path.length; i++){
     rst.push(<button key = {props.path[i].id} className = 'button_group' onClick = {()=>{
-      console.log(props.path[i].id);
-      let open_status = check_open(props.path[i].id, props.today);
-      console.log(open_status);
+      // console.log('adsfasdf',props.path[i].id);
+      let open_status = check_open(props.path[i].id, props.today, open_close);
+      // console.log(open_status);
 
       // check the orient-area tag
       let orient_area = document.getElementsByClassName('button_group');
@@ -91,7 +95,17 @@ function ButtonGroup(props){
       }else{
         status_img.src = 'img/closed.png';
       }
+      
+      // Hour operation detail
+      let hour_div = document.createElement('div');
+      let hour_arr = open_close[props.path[i].id].open_hour[props.today.getDay()].hour
+      hour_div.id = 'hour_div';
+      
+      hour_div.innerHTML = `Operating Hours : ${hour_arr[0]}  ~  ${hour_arr[1]}`
+
+      //appending sequences
       status_img_div.appendChild(status_img); // append img to div
+      status_img_div.appendChild(hour_div);
       status_img_div.appendChild(x_button); // append button to div
       orient_area[0].appendChild(status_img_div); // append div to the point of button 0
     }
