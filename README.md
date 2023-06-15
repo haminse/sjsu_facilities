@@ -1,5 +1,7 @@
 # SJSU Facility Operation time & OPEN/CLOSED app 
 
+https://sjsu-facilities-open-notofficial.netlify.app/
+
 - GOAL : SJSU 교내 주요 시설 영업 현황 및 시간을 알려주는 웹 페이지 개발
 - Benefit : 한 번에 모든 주요 시설의 오픈 현황, 오픈 시간 정보를 제공하여 편리한 교내 시설 이용에 기여
 - Task : React 앱을 이용한 사용자 모니터 환경에 따라 디자인이 변경되는 반응형 웹페이지 구축 (모바일 중점) 및 버튼 입력에 따라 정보를 띄워주는 동적 기능 구현
