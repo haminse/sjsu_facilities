@@ -1,4 +1,37 @@
-# SJSU Facility Operation time & OPEN/CLOSED app 
+# Project Description: SJSU Campus Facilities Status Webpage [**[LINK]**](https://sjsu-facilities-open-notofficial.netlify.app/)
+
+<img width="744" alt="image" src="https://github.com/haminse/sjsu_facilities/assets/68217111/bcce4002-6625-40f4-98a1-becf7a4f4913">
+
+
+
+
+## GOAL
+Develop a webpage providing real-time information on the operational status and hours of key facilities within the SJSU campus.
+
+## Benefit
+Facilitate convenient utilization of campus facilities by offering comprehensive information on the open status and operating hours of all major facilities in one place.
+
+## Task
+Construct a responsive webpage using React that adapts to user monitor environments, with a focus on mobile devices. Implement dynamic functionality to display information based on button inputs.
+
+
+## Solution Method
+- Design visually distinct icons to represent open and closed status for enhanced visibility.
+- Create the basic structure of the webpage using React components and tailor the design for mobile responsiveness.
+- Develop buttons corresponding to key facilities; upon clicking, dynamically display information about their operational status and hours.
+- Ensure code maintainability and facilitate updates through GitHub repository.
+- Deploy the webpage using the Netlify platform.
+
+
+## Tools
+VScode (React, HTML, CSS, JS)
+Illustration tools
+GitHub
+Netlify
+
+---
+
+# SJSU Facility Operation time & OPEN/CLOSED app [**[LINK]**](https://sjsu-facilities-open-notofficial.netlify.app/)
 
 https://sjsu-facilities-open-notofficial.netlify.app/
 
